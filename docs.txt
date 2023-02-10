@@ -1,0 +1,56 @@
+$ npm init -y
+
+tailwind.config.js :
+
+module.exports = {
+  content: [
+    './*.{html, js}'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+$ npx tailwindcss -i ./input.css -o ./css/main.css         
+
+Edit all them css inside input.css
+
+link the css 
+
+run the above command everytime we make changes or we can add --watch at the end of command to scan your template files for classes and build your CSS
+
+OR else make a script in package.json to do it automatically
+
+{
+  "name": "practice01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./input.css -o ./css/main.css",
+    "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
+
+}
+
+$ npm run build - to compile
+
+$ npm run watch - to constantly build and watch 
+
+
+Conditions in class: hidden class and flex class if screen is md
+<div class="hidden md:flex space-x-6">
+  <a href="#">Pricing</a>
+  <a href="#">Product</a>
+  <a href="#">About Us</a>
+  <a href="#">Careers</a>
+  <a href="#">Community</a>
+</div>
